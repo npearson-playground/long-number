@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": ".NET Core Launch (web-api)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-webapi",
+            "program": "${workspaceFolder}/LongNumber.WebApi/bin/Debug/net5.0/LongNumber.WebApi.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/LongNumber.WebApi",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+                "uriFormat": "%s/swagger"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
+            "name": "Docker .NET Core Launch",
+            "type": "docker",
+            "request": "launch",
+            "preLaunchTask": "docker-run: debug",
+            "netCore": {
+                "appProject": "${workspaceFolder}/LongNumber.WebApi/LongNumber.WebApi.csproj"
+            }
+        }
+    ]
+}
